@@ -17,5 +17,11 @@
         return $app['twig']->render('contacts.html.twig', array('contacts' => $allContacts));
     });
 
+    $app->post('/create_contact', function() use ($app) {
+        $newContact = new Contact($_POST['name'], $_POST['number'], $_POST['address']);
+        $newContact->save();
+        return $app['twig']->render('create_contact.html.twig', array('contact' => $newContact));
+    });
+
     return $app;
 ?>
