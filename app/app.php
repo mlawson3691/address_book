@@ -29,10 +29,32 @@
 
     $app->post('/search_contacts', function() use ($app) {
         $contacts_matching_search = array();
-        foreach (Contact::getAll() as $contact) {
-            $name = $contact->getName();
-            if(stripos($name, $_POST['search']) !== false) {
-                array_push($contacts_matching_search, $contact);
+        if ($_POST['searchType'] == 'name') {
+            foreach (Contact::getAll() as $contact) {
+                $name = $contact->getName();
+                if (stripos($name, $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                }
+            }
+        } elseif ($_POST['searchType'] == 'number') {
+            foreach (Contact::getAll() as $contact) {
+                $number = $contact->getNumber();
+                if (stripos($number, $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                }
+            }
+        } elseif ($_POST['searchType'] == 'address') {
+            foreach (Contact::getAll() as $contact) {
+                $address = $contact->getAddress();
+                if (stripos($address->getStreet(), $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                } elseif (stripos($address->getCity(), $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                } elseif (stripos($address->getState(), $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                } elseif (stripos($address->getZip(), $_POST['search']) !== false) {
+                    array_push($contacts_matching_search, $contact);
+                }
             }
         }
         return $app['twig']->render('search_contacts.html.twig', array('results' => $contacts_matching_search));
