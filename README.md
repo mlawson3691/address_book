@@ -6,7 +6,7 @@
 
 ## Description ##
 
-This application is an address book built with PHP. Users can create new contacts by submitting a form. All contacts are then displayed in a list. Users can also delete all contacts.
+This application is an address book built with PHP. Users can create new contacts by submitting a form. All contacts are then displayed in a list. Users can also search for a specific contact by property and delete all contacts.
 
 ## Setup/Installation Instructions ##
 
