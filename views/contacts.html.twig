@@ -11,7 +11,8 @@
                     <li>
                         <h3>{{ contact.getName }}</h3>
                         <p><strong>Phone:</strong> {{ contact.getNumber }}</p>
-                        <p><strong>Address:</strong> {{ contact.getAddress }}</p>
+                        <p><strong>Address:</strong> {{ contact.getAddress.getStreet }}
+                        <br>&emsp;&emsp;&emsp;&emsp;{{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}</p>
                         <hr>
                     </li>
                 {% endfor %}
@@ -20,6 +21,7 @@
 
         <h2>Add a New Contact:</h2>
         <form action='/create_contact' method='post'>
+            <p>Contact:</p>
             <div>
                 <label for='name'>Name:</label>
                 <input id='name' name='name' type='text'>
@@ -28,9 +30,22 @@
                 <label for='number'>Phone Number:</label>
                 <input id='number' name='number' type='text'>
             </div>
+            <p>Address:</p>
             <div>
-                <label for='address'>Address:</label>
-                <input id='address' name='address' type='text'>
+                <label for='street'>Street:</label>
+                <input id='street' name='street' type='text'>
+            </div>
+            <div>
+                <label for='city'>City:</label>
+                <input id='city' name='city' type='text'>
+            </div>
+            <div>
+                <label for='state'>State:</label>
+                <input id='state' name='state' type='text' maxlength='2'>
+            </div>
+            <div>
+                <label for='zip'>Zip Code:</label>
+                <input id='zip' name='zip' type='number' min='1' max='99999'>
             </div>
             <button type='submit'>Add Contact</button>
         </form>
