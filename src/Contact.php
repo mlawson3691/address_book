@@ -24,7 +24,7 @@
 
         function setAddress($newAddress)
         {
-            $this->address = (string) $newAddress;
+            $this->address = (object) $newAddress;
         }
 
         function getName()
