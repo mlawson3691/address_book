@@ -5,8 +5,6 @@
     session_start();
     if (empty($_SESSION['list_of_contacts'])) {
         $_SESSION['list_of_contacts'] = array();
-        $person = new Contact('Bob', '111-111-1111', '111 One Lane Portland, OR 11111');
-        $person->save();
     }
 
     $app = new Silex\Application();
@@ -24,6 +22,7 @@
 
     $app->post('/delete_contacts', function() use ($app) {
         Contact::deleteAll();
+        return $app['twig']->render('delete_contacts.html.twig');
     });
 
     return $app;
