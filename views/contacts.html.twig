@@ -5,7 +5,13 @@
     <body>
         <h1>Address Book</h1>
         {% if contacts is not empty %}
-            <h2>Your contacts:</h2>
+            <h2>Search For a Contact by Name</h2>
+            <form action='/search_contacts' method='post'>
+                <input id='search' name='search' type='text'>
+                <button type='submit'>Search</button>
+            </form>
+            <hr>
+            <h2>Your Contacts:</h2>
             <ul>
                 {% for contact in contacts %}
                     <li>
