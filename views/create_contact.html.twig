@@ -5,7 +5,11 @@
     <body>
         <h1>Address Book</h1>
         <h2>You have successfull created a new contact!</h2>
-        <p>{{ contact.getName }} has been added to your contacts.</p>
-        <p><a href='/'>View Contacts</a></p>
+        <p>{{ contact.getName }} has been added to your contacts:</p>
+        <ul>
+            <li>Phone: {{ contact.getNumber }}</li>
+            <li>Address: {{ contact.getAddress }}</li>
+        </ul>
+        <p><a href='/'>View All Contacts</a></p>
     </body>
 </html>
