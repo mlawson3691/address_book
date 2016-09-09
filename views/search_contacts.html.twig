@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Address Book</title>
+    </head>
+    <body>
+        <h1>Address Book</h1>
+        <h2>Search Results</h2>
+        {% if results is not empty %}
+            <ul>
+                {% for result in results %}
+                    <li>
+                        <h3>{{ result.getName }}</h3>
+                        <p><strong>Phone:</strong> {{ result.getNumber }}</p>
+                        <p><strong>Address:</strong> {{ result.getAddress.getStreet }}
+                        <br>&emsp;&emsp;&emsp;&emsp;{{ result.getAddress.getCity }}, {{ result.getAddress.getState }} {{ result.getAddress.getZip }}</p>
+                        <hr>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>There are no contacts that match your search.</p>
+        {% endif %}
+        <h2>Search Again</h2>
+        <form action='/search_contacts' method='post'>
+            <input id='search' name='search' type='text'>
+            <button type='submit'>Search</button>
+        </form>
+        <p><a href='/'>View All Contacts</a></p>
+    </body>
+</html>
