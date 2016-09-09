@@ -5,7 +5,7 @@
     <body>
         <h1>Address Book</h1>
         {% if contacts is not empty %}
-            <h3>Your contacts:</h3>
+            <h2>Your contacts:</h2>
             <ul>
                 {% for contact in contacts %}
                     <li>
@@ -17,5 +17,22 @@
                 {% endfor %}
             </ul>
         {% endif %}
+
+        <h2>Add a New Contact:</h2>
+        <form action='/create_contact' method='post'>
+            <div>
+                <label for='name'>Name:</label>
+                <input id='name' name='name' type='text'>
+            </div>
+            <div>
+                <label for='number'>Phone Number:</label>
+                <input id='number' name='number' type='text'>
+            </div>
+            <div>
+                <label for='address'>Address:</label>
+                <input id='address' name='address' type='text'>
+            </div>
+            <button type='submit'>Add</button>
+        </form>
     </body>
 </html>
