@@ -13,14 +13,17 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
     $app->get('/', function() use ($app) {
-        $allContacts = Contact::getAll();
-        return $app['twig']->render('contacts.html.twig', array('contacts' => $allContacts));
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
     });
 
     $app->post('/create_contact', function() use ($app) {
         $newContact = new Contact($_POST['name'], $_POST['number'], $_POST['address']);
         $newContact->save();
         return $app['twig']->render('create_contact.html.twig', array('contact' => $newContact));
+    });
+
+    $app->post('/delete_contacts', function() use ($app) {
+        Contact::deleteAll();
     });
 
     return $app;
