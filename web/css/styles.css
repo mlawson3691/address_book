@@ -1,5 +1,8 @@
+/* GENERAL FORMATTING */
+
 body {
-    background: #669999;
+    background: #94b8b8;
+    color: #595959;
 }
 
 .container {
@@ -9,10 +12,11 @@ body {
 .well {
     margin-top: 25px;
     border-radius: 25px;
+    box-shadow: 2px 2px 2px #476b6b;
 }
 
 .wrapper {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -33,24 +37,89 @@ hr {
     background: #476b6b;
 }
 
+/* RADIO BUTTONS */
+
+input[type="radio"]:checked {
+    color: #ffff99;
+}
+
 #radios {
     margin-top: 10px;
 }
 
 .radio-inline {
-    margin: 0 30px;
+    margin: 0 20px;
 }
+
+/* CONTACTS */
+
+.avatar {
+    display: inline-block;
+    width: 125px;
+    height: 125px;
+    margin-right: 25px;
+    margin-top: -100px;
+}
+
+.contactInfo {
+    display: inline-block;
+    width: 270px;
+}
+
+/* SECONDARY PAGES */
+
+.text-center ul {
+    padding-left: 0;
+}
+
+.text-center li {
+    list-style-type: none;
+}
+
+/* NEW CONTACT FORM */
 
 .form-create {
     display: none;
 }
 
-#bottomButtons {
-    width: 400px;
-    margin: 0 auto;
+.form-create h2 {
+    text-align: center;
 }
 
-.btn-bottom {
+.form-create .btn {
+    width: 70%;
+    margin-left: 15%;
+}
+
+#newContact {
     display: inline;
-    margin: 0 20px;
+    width: 30%;
+    margin-left: 15%;
+}
+
+/* BOTTOM NAVIGATION */
+
+#bottomButtons form {
+    display: inline;
+}
+
+#hideNewContact {
+    display:none;
+    width: 30%;
+    margin-left: 15%;
+}
+
+#btnClear {
+    width: 30%;
+    margin-left: 10%;
+}
+
+.btn-home {
+    width: 30%;
+    margin-left: 35%;
+}
+
+button a, button a:hover, button a:focus, button a:active {
+    color: white;
+    text-decoration: none;
 }
