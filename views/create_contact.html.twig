@@ -6,18 +6,23 @@
     </head>
     <body>
         <div class='container'>
-            <h1>Address Book</h1>
-            <h2>You have successfull created a new contact!</h2>
-            <p>{{ contact.getName }} has been added to your contacts:</p>
-            <ul>
-                <li>{{ contact.getNumber }}</li>
-                <li>
-                    {{ contact.getAddress.getStreet }}
-                    <br>
-                    {{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}
-                </li>
-            </ul>
-            <p><a href='/'>View All Contacts</a></p>
+            <div class='well'>
+                <h2 class='text-center'>You have successfull created a new contact!</h2>
+                <hr>
+                <div class='wrapper text-center'>
+                    <h4>{{ contact.getName }}</h4>
+                    <ul>
+                        <li>{{ contact.getNumber }}</li>
+                        <li>
+                            {{ contact.getAddress.getStreet }}
+                            <br>
+                            {{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <a href='/'><button class='btn btn-primary btn-home' type='button'>View All Contacts</button></a>
+            </div>
         </div>
     </body>
 </html>

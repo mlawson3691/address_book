@@ -15,7 +15,7 @@
                     <div class='wrapper'>
                         <form class='form-search' action='/search_contacts' method='post'>
                             <div class='input-group'>
-                                <input class='form-control' id='search' name='search' type='text' placeholder='Search'>
+                                <input class='form-control' id='search' name='search' type='text' placeholder='Search...'>
                                 <span class='input-group-btn'>
                                     <button class='btn btn-primary' type='submit' placeholder='Search'>Search</button>
                                 </span>
@@ -33,58 +33,57 @@
                             </div>
                         </form>
                     </div>
+                    <hr>
+                    {% for contact in contacts %}
+                        <div class='wrapper'>
+                            <img src='img/man.svg' alt='avatar' class='avatar'>
+                            <div class='contactInfo'>
+                                <h3>{{ contact.getName }}</h3>
+                                <p><strong>Phone:</strong> {{ contact.getNumber }}</p>
+                                <p><strong>Address:</strong> {{ contact.getAddress.getStreet }}
+                                <br>&emsp;&emsp;&emsp;&emsp;&emsp;{{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}</p>
+                            </div>
+                        </div>
                         <hr>
-                    <div class='wrapper'>
-                        <h2>Your Contacts:</h2>
-                        <ul>
-                            {% for contact in contacts %}
-                                <li>
-                                    <h3>{{ contact.getName }}</h3>
-                                    <p><strong>Phone:</strong> {{ contact.getNumber }}</p>
-                                    <p><strong>Address:</strong> {{ contact.getAddress.getStreet }}
-                                    <br>&emsp;&emsp;&emsp;&emsp;{{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}</p>
-                                    <hr>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    <div>
+                    {% endfor %}
                 {% endif %}
 
-
-                <form class='form-create' action='/create_contact' method='post'>
-                    <h2>Add a New Contact:</h2>
-                    <p>Contact:</p>
-                    <div>
-                        <label for='name'>Name:</label>
-                        <input id='name' name='name' type='text'>
-                    </div>
-                    <div>
-                        <label for='number'>Phone Number:</label>
-                        <input id='number' name='number' type='text'>
-                    </div>
-                    <p>Address:</p>
-                    <div>
-                        <label for='street'>Street:</label>
-                        <input id='street' name='street' type='text'>
-                    </div>
-                    <div>
-                        <label for='city'>City:</label>
-                        <input id='city' name='city' type='text'>
-                    </div>
-                    <div>
-                        <label for='state'>State:</label>
-                        <input id='state' name='state' type='text' maxlength='2'>
-                    </div>
-                    <div>
-                        <label for='zip'>Zip Code:</label>
-                        <input id='zip' name='zip' type='number' min='1' max='99999'>
-                    </div>
-                    <button type='submit'>Add Contact</button>
-                </form>
+                <div class='wrapper'>
+                    <form class='form-create wrapper' action='/create_contact' method='post'>
+                        <h2>Add a New Contact:</h2>
+                        <div class='form-group'>
+                            <label for='name'>Name:</label>
+                            <input class='form-control' id='name' name='name' type='text'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='number'>Phone Number:</label>
+                            <input class='form-control' id='number' name='number' type='text'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='street'>Street:</label>
+                            <input class='form-control' id='street' name='street' type='text'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='city'>City:</label>
+                            <input class='form-control' id='city' name='city' type='text'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='state'>State:</label>
+                            <input class='form-control' id='state' name='state' type='text' maxlength='2'>
+                        </div>
+                        <div class='form-group'>
+                            <label for='zip'>Zip Code:</label>
+                            <input class='form-control' id='zip' name='zip' type='number' min='1' max='99999'>
+                        </div>
+                        <button class='btn btn-primary' type='submit'>Add Contact</button>
+                    </form>
+                </div>
+                <hr class='form-create'>
                 <div id='bottomButtons'>
-                    <button id='newContact' class='btn btn-primary btn-bottom' type='button'>Add a New Contact</button>
-                    <form class='btn-bottom' action='/delete_contacts' method='post'>
-                        <button class='btn btn-danger' type='submit'>Clear All Contacts</button>
+                    <button id='newContact' class='btn btn-primary' type='button'>Add a New Contact</button>
+                    <button id='hideNewContact' class='btn btn-primary' type='button'>Hide New Contact</button>
+                    <form action='/delete_contacts' method='post'>
+                        <button id='btnClear' class='btn btn-danger' type='submit'>Delete All Contacts</button>
                     </form>
                 </div>
             </div>
