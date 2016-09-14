@@ -1,19 +1,23 @@
 <html>
     <head>
+        <link href='css/bootstrap.min.css' type='text/css' rel='stylesheet'>
+        <link href='css/styles.css' type='text/css' rel='stylesheet'>
         <title>Address Book</title>
     </head>
     <body>
-        <h1>Address Book</h1>
-        <h2>You have successfull created a new contact!</h2>
-        <p>{{ contact.getName }} has been added to your contacts:</p>
-        <ul>
-            <li>{{ contact.getNumber }}</li>
-            <li>
-                {{ contact.getAddress.getStreet }}
-                <br>
-                {{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}
-            </li>
-        </ul>
-        <p><a href='/'>View All Contacts</a></p>
+        <div class='container'>
+            <h1>Address Book</h1>
+            <h2>You have successfull created a new contact!</h2>
+            <p>{{ contact.getName }} has been added to your contacts:</p>
+            <ul>
+                <li>{{ contact.getNumber }}</li>
+                <li>
+                    {{ contact.getAddress.getStreet }}
+                    <br>
+                    {{ contact.getAddress.getCity }}, {{ contact.getAddress.getState }} {{ contact.getAddress.getZip }}
+                </li>
+            </ul>
+            <p><a href='/'>View All Contacts</a></p>
+        </div>
     </body>
 </html>
