@@ -1,0 +1,56 @@
+body {
+    background: #669999;
+}
+
+.container {
+    width: 600px;
+}
+
+.well {
+    margin-top: 25px;
+    border-radius: 25px;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+hr {
+    border-color: #737373;
+}
+
+.btn-primary {
+    background: #669999;
+    border-color: #669999;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    background: #476b6b;
+}
+
+#radios {
+    margin-top: 10px;
+}
+
+.radio-inline {
+    margin: 0 30px;
+}
+
+.form-create {
+    display: none;
+}
+
+#bottomButtons {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.btn-bottom {
+    display: inline;
+    margin: 0 20px;
+}
