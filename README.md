@@ -29,6 +29,7 @@ Please report any bugs or issues to mlawson3691@gmail.com.
 * PHP
 * Silex
 * Twig
+* Flaticon
 
 ### License ###
 
