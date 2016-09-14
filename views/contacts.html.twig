@@ -79,13 +79,17 @@
                     </form>
                 </div>
                 <hr class='form-create'>
-                <div id='bottomButtons'>
-                    <button id='newContact' class='btn btn-primary' type='button'>Add a New Contact</button>
-                    <button id='hideNewContact' class='btn btn-primary' type='button'>Hide New Contact</button>
-                    <form action='/delete_contacts' method='post'>
-                        <button id='btnClear' class='btn btn-danger' type='submit'>Delete All Contacts</button>
-                    </form>
-                </div>
+                {% if contacts is not empty %}
+                    <div id='bottomButtons'>
+                        <button id='newContact' class='newContact btn btn-primary' type='button'>Add a New Contact</button>
+                        <button id='hideNewContact' class='btn btn-primary' type='button'>Hide New Contact</button>
+                        <form action='/delete_contacts' method='post'>
+                            <button id='btnClear' class='btn btn-danger' type='submit'>Delete All Contacts</button>
+                        </form>
+                    </div>
+                {% else %}
+                    <button id='newContact' class='btn-home btn btn-primary' type='button'>Add a New Contact</button>
+                {% endif %}
             </div>
         </div>
     </body>

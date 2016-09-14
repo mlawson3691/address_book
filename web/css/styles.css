@@ -91,7 +91,7 @@ input[type="radio"]:checked {
     margin-left: 15%;
 }
 
-#newContact {
+.newContact {
     display: inline;
     width: 30%;
     margin-left: 15%;
